@@ -40,9 +40,9 @@ if(count($users) > 0)
 	$msg[] = 'Этот логин уже используется. Придумайте другой.';
 }
 
-$statement = $pdo->query("SELECT * FROM `allUsers` WHERE `email` = :email");
-$values = ['email' => $email];
-$statement->execute($values);
+$statement = $pdo->prepare("SELECT * FROM `allUsers` WHERE `email` = :email");
+$val = ['email' => $email];
+$statement->execute($val);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 if(count($users) > 0)
 {

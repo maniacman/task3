@@ -24,7 +24,7 @@ if (count($msg) > 0)
 
 $pdo = new PDO('mysql:host=localhost;dbname=users_learning;charset=utf8;', 'root', '');
 
-$statement = $pdo->query("SELECT * FROM `allUsers` WHERE `login` = :login");
+$statement = $pdo->prepare("SELECT * FROM `allUsers` WHERE `login` = :login");
 $values = ['login' => $login];
 $statement->execute($values);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);

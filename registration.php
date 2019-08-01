@@ -6,6 +6,7 @@ if (count($_SESSION['msg']) > 0)
     {
        echo $msg . '<br>';
     }
+    $_SESSION['msg'] = [];
 }
 ?>
 <!DOCTYPE html>

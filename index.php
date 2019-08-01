@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,5 +35,17 @@
 		<a href="authorization.php" class="btn btn-secondary">Войти</a>
 		<a href="registration.php" class="btn btn-info">Регистрация</a>
 	</nav>
+
+	<?php
+	if (($_SESSION['auth']) == 'bingo')
+	{
+		echo 'Вы авторизованы';
+	}
+	else
+	{
+		echo 'Авторизуйтесь или зарегистрируйтесь';	
+	}
+	?>
+
 </body>
 </html>

@@ -24,19 +24,19 @@ if (count($_SESSION['msg']) > 0)
                 <form action="insert.php" method="post">
                     <div class="form-group">
                         <label for="">Логин</label>
-                        <input type="text" name="login" class="form-control" required>
+                        <input type="text" name="login" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Пароль</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Повторите пароль</label>
-                        <input type="password" name="password2" class="form-control" required>
+                        <input type="password" name="password2" class="form-control">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Ввод</button>

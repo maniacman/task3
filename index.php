@@ -39,7 +39,8 @@ session_start();
 	<?php
 	if (($_SESSION['auth']) == 'bingo')
 	{
-		echo 'Вы авторизованы';
+		echo 'Вы авторизованы' . '<br>';
+		echo '<a href="exit.php" class="btn btn-secondary">Выйти</a>';
 	}
 	else
 	{

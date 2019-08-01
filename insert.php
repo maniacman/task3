@@ -59,7 +59,7 @@ if (count($msg) == 0)
 	$query = $pdo->prepare("INSERT INTO `allUsers` (login, email, password) VALUES(:login, :email, :password)");
 	$values = ['login' => $login, 'email' => $email, 'password' => $password];
 	$query->execute($values);	
-	header('Location: index.php');
+	header('Location: authorization.php');
 	exit;
 }
 else

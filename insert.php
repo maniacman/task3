@@ -31,16 +31,18 @@ if (count($msg) > 0)
 
 $pdo = new PDO('mysql:host=localhost;dbname=users_learning;charset=utf8;', 'root', '');
 
-$sql = "SELECT * FROM `allUsers` WHERE `login` = '$login'";
-$statement = $pdo->query($sql);
+$statement = $pdo->prepare("SELECT * FROM `allUsers` WHERE `login` = :login");
+$values = ['login' => $login];
+$statement->execute($values);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 if(count($users) > 0)
 {
 	$msg[] = 'Этот логин уже используется. Придумайте другой.';
 }
 
-$sql = "SELECT * FROM `allUsers` WHERE `email` = '$email'";
-$statement = $pdo->query($sql);
+$statement = $pdo->query("SELECT * FROM `allUsers` WHERE `email` = :email");
+$values = ['email' => $email];
+$statement->execute($values);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 if(count($users) > 0)
 {
